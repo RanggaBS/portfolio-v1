@@ -50,7 +50,7 @@ const Page = () => {
 					{/* h1 end */}
 
 					{/* Description begin */}
-					<div className="max-w-lg ml-6">
+					<div className="max-w-lg mx-6">
 						{/* <CodeTag className="ml-6">{"<p>"}</CodeTag> */}
 
 						{/* <p className="max-w-lg ml-8">
@@ -76,7 +76,7 @@ const Page = () => {
 					{/* Description end */}
 
 					{/* Form begin */}
-					<div>
+					<div className="mr-6">
 						<CodeTag className="ml-6">{"<form>"}</CodeTag>
 
 						<ContactForm />
