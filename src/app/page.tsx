@@ -1,12 +1,13 @@
 import Link from "next/link";
 
+import CodeBlock from "@/components/CodeBlock";
 import CodeTag from "@/components/CodeTag";
-import RubberbandLetter from "@/components/RubberbandLetter";
+import RubberbandText from "@/components/RubberbandText";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn, CssPropertiesWithVariable } from "@/lib/utils";
 
 const Page = () => {
-	const texts = ["Hi!", "I'm Rangga Buana Saputra"];
+	const headers = ["Hi!", "I'm Rangga Buana Saputra"];
 
 	return (
 		<main className="flex-grow">
@@ -22,7 +23,7 @@ const Page = () => {
 
 				<div className="flex flex-row-reverse flex-wrap items-center justify-end py-4">
 					{/* Picture */}
-					<div className="flex h-max items-center min-w-min w-[35%]">
+					<div className="flex ml-6 h-max items-center min-w-min w-[35%]">
 						<svg
 							version="1.1"
 							xmlns="http://www.w3.org/2000/svg"
@@ -90,68 +91,41 @@ const Page = () => {
 					</div>
 
 					{/* Me */}
-					<div className="max-w-[640px] pl-6">
+					<div className="max-w-screen-sm ml-10">
 						{/* h1 begin */}
-						<div className="pb-2">
-							<CodeTag className="ml-6">{"<h1>"}</CodeTag>
+						<div className="pb-2 mr-6">
+							<CodeBlock tag="h1" variant="top-left-bottom-right">
+								<RubberbandText
+									tag="p"
+									text={headers[0]}
+									className="ml-2 pb-2 font-extrabold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl"
+								/>
 
-							{/* "Hi!" text */}
-							<p className="ml-8 pb-2 font-black text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl">
-								{texts
-									.at(0)!
-									.split("")
-									.map((letter, index) => (
-										<RubberbandLetter
-											key={index}
-											letter={letter}
-										/>
-									))}
-							</p>
-
-							{/* Break words */}
-							<h1 className="flex flex-wrap gap-x-2 ml-8 font-black text-4xl min-[480px]:text-5xl sm:text-6xl md:text-7xl">
-								{texts
-									.at(1)!
-									.split(" ")
-									.map((text, textIndex) => (
-										<p
-											key={textIndex}
-											className="inline leading-[1.15]"
-										>
-											{text
-												.split("")
-												.map((letter, letterIndex) => (
-													<RubberbandLetter
-														key={letterIndex}
-														letter={letter}
-													/>
-												))}
-										</p>
-									))}
-							</h1>
-
-							<CodeTag className="ml-6">{"<h1>"}</CodeTag>
+								<RubberbandText
+									tag="h1"
+									text={headers[1]}
+									className="flex flex-wrap gap-x-2 ml-2 font-black text-4xl min-[480px]:text-5xl sm:text-6xl md:text-7xl"
+								/>
+							</CodeBlock>
 						</div>
 						{/* h1 end */}
 
 						{/* p begin */}
-						<div>
-							<CodeTag className="ml-6">{"<p>"}</CodeTag>
-
-							<p className="py-2 ml-8">
-								🧑 Front-end & back-end developer,
-								<br />
-								based in Indonesia.
-							</p>
-
-							<CodeTag className="ml-6">{"</p>"}</CodeTag>
+						<div className="mr-6">
+							<CodeBlock tag="p" variant="top-n-bottom-left">
+								<p className="py-2 ml-2">
+									🧑 Front-end & back-end developer,
+									<br />
+									based in Indonesia.
+								</p>
+							</CodeBlock>
 						</div>
 						{/* p end */}
 
 						<Link
 							href="/about"
 							className={cn(
-								"inline-block ml-6 mt-4",
+								"inline-block mt-4",
 								buttonVariants({
 									variant: "primary",
 									size: "md",

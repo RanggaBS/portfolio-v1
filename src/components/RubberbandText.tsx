@@ -13,11 +13,11 @@ const RubberbandText = ({
 	className = undefined,
 }: RubberbandTextProps) => {
 	const txt = text.split(" ").map((word, index) => (
-		<p key={index} className="inline">
+		<span key={index} className="inline">
 			{word.split("").map((letter, letterIndex) => (
 				<RubberbandLetter key={letterIndex} letter={letter} />
 			))}
-		</p>
+		</span>
 	));
 
 	const el = createElement(tag, { className }, ...txt);

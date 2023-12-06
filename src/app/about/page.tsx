@@ -22,23 +22,8 @@ const page = () => {
 
 				<div className="flex flex-wrap">
 					<div>
-						{/* <div className="py-4 w-max">
-							<CodeTag className="ml-6">{"<h1>"}</CodeTag>
-
-							<h1 className="sr-only">Rangga Buana Saputra</h1>
-							<h2 className="ml-8 text-4xl font-black min-[480px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-								About Me
-							</h2>
-							
-							<CodeTag className="block -mr-2 text-end">
-							{"</h1>"}
-							</CodeTag>
-						</div> */}
 						<div className="py-4 ml-6 w-max">
 							<CodeBlock tag="h1" variant="top-left-bottom-right">
-								{/* <h2 className="ml-2 text-4xl font-black min-[480px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-									About Me
-								</h2> */}
 								<RubberbandText
 									tag="h2"
 									text="About Me"
@@ -47,45 +32,7 @@ const page = () => {
 							</CodeBlock>
 						</div>
 
-						<div className="w-4/5 max-w-2xl pl-6">
-							{/* <CodeTag className="ml-6">{"<p>"}</CodeTag> */}
-							{/* <p className="ml-8">
-							🚀 Hello there, my name is{" "}
-							<span className="font-bold">
-								Rangga Buana Saputra
-							</span>
-							, and I&apos;m a new full-stack web developer who
-							enjoys creating dynamic and user-friendly digital
-							experiences.
-							<br />
-							I&apos;m interested in both front-end magic and
-							back-end logic, and I&apos;m proficient in HTML,
-							CSS, and JavaScript. Eager to contribute to unique
-							projects and learn new things on a daily basis.
-							<br />
-							<br />
-							Let&apos;s collaborate to code the future! 💻✨
-						</p> */}
-							{/* <p className="ml-8">
-								🚀 Hello, I&apos;m{" "}
-								<span className="font-bold">
-									Rangga Buana Saputra
-								</span>
-								, an emerging Fullstack Developer with a passion
-								for converting thoughts to digital experiences.
-								<br />
-								<br />
-								In the world of web development I navigate with
-								enthusiasm from front end aesthetics to backend
-								functionality.
-								<br />
-								<br />
-								I&apos;m eager to work together and bring
-								innovation projects to life! 💻✨
-							</p> */}
-							{/* <CodeTag className="block -mr-2 text-end">
-								{"</p>"}
-							</CodeTag> */}
+						<div className="w-[90%] max-w-2xl pl-6">
 							<CodeBlock tag="p" variant="top-left-bottom-right">
 								<p className="ml-2">
 									🚀 Hello, I&apos;m{" "}
@@ -122,7 +69,7 @@ const page = () => {
 					</div>
 				</div>
 
-				{/* Last element must have padding bottom */}
+				{/* Last element must have padding bottom to give extra space */}
 				<div className="pb-14 lg:pb-0">
 					<CodeTag className="ml-3">{"</body>"}</CodeTag>
 					<br />
