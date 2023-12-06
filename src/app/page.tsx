@@ -1,113 +1,176 @@
-import Image from 'next/image'
+import Link from "next/link";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+import CodeTag from "@/components/CodeTag";
+import RubberbandLetter from "@/components/RubberbandLetter";
+import { buttonVariants } from "@/components/ui/Button";
+import { cn, CssPropertiesWithVariable } from "@/lib/utils";
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+const Page = () => {
+	const texts = ["Hi!", "I'm Rangga Buana Saputra"];
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+	return (
+		<main className="flex-grow">
+			<div
+				className="flex flex-col justify-between w-full h-full p-2 sm:p-4 md:p-6 lg:p-8"
+				style={{ maxHeight: "calc(100% - 56px)" }}
+			>
+				<div>
+					<CodeTag>{"<html>"}</CodeTag>
+					<br />
+					<CodeTag className="ml-3">{"<body>"}</CodeTag>
+				</div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+				<div className="flex flex-row-reverse flex-wrap items-center justify-end py-4">
+					{/* Picture */}
+					<div className="flex h-max items-center min-w-min w-[35%]">
+						<svg
+							version="1.1"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 500 500"
+							width="100%"
+							id="blobSvg"
+							style={{ opacity: 1 }}
+							className="min-h-[200px] max-h-[360px] min-w-[200px] max-w-[360px]"
+						>
+							<image
+								x="0"
+								y="0"
+								width="100%"
+								height="100%"
+								clipPath="url(#shape)"
+								href="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=880&amp;q=80"
+								preserveAspectRatio="none"
+							></image>{" "}
+							<defs>
+								{" "}
+								<linearGradient
+									id="gradient"
+									x1="0%"
+									y1="0%"
+									x2="0%"
+									y2="100%"
+								>
+									{" "}
+									<stop
+										offset="0%"
+										style={
+											{
+												stopColor: "rgb(162, 125, 78)",
+												"--darkreader-inline-stopcolor":
+													"#ebc594",
+											} as CssPropertiesWithVariable
+										}
+										data-darkreader-inline-stopcolor=""
+									></stop>{" "}
+									<stop
+										offset="100%"
+										style={
+											{
+												stopColor: "rgb(255, 0, 111)",
+												"--darkreader-inline-stopcolor":
+													"#ef639f",
+											} as CssPropertiesWithVariable
+										}
+										data-darkreader-inline-stopcolor=""
+									></stop>{" "}
+								</linearGradient>{" "}
+							</defs>{" "}
+							<clipPath id="shape">
+								<path id="blob" fill="url(#gradient)">
+									{" "}
+									<animate
+										attributeName="d"
+										dur="5000ms"
+										repeatCount="indefinite"
+										values="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99,367Q39,327,31.5,247.5Q24,168,89,125.5Q154,83,219.5,68Q285,53,335.5,94.5Q386,136,424.5,193Q463,250,440.5,320.5Z;M453.78747,319.98894Q416.97789,389.97789,353.96683,436.87838Q290.95577,483.77887,223.95577,447.43366Q156.95577,411.08845,105.64373,365.97789Q54.33169,320.86732,62.67444,252.61056Q71.01719,184.3538,113.01965,135.21007Q155.02211,86.06634,220.52211,66.46683Q286.02211,46.86732,335.5,91.94472Q384.97789,137.02211,437.78747,193.51106Q490.59704,250,453.78747,319.98894Z;M411.39826,313.90633Q402.59677,377.81265,342.92059,407.63957Q283.24442,437.46649,215.13648,432.5428Q147.02853,427.61911,82.23325,380.9572Q17.43796,334.29529,20.45223,250.83809Q23.46649,167.38089,82.5856,115.05707Q141.70471,62.73325,212.19045,63.73015Q282.67618,64.72705,352.67308,84.79839Q422.66998,104.86972,421.43486,177.43486Q420.19974,250,411.39826,313.90633Z;M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99,367Q39,327,31.5,247.5Q24,168,89,125.5Q154,83,219.5,68Q285,53,335.5,94.5Q386,136,424.5,193Q463,250,440.5,320.5Z;"
+									></animate>{" "}
+								</path>
+							</clipPath>
+						</svg>
+					</div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+					{/* Me */}
+					<div className="max-w-[640px] pl-6">
+						{/* h1 begin */}
+						<div className="pb-2">
+							<CodeTag className="ml-6">{"<h1>"}</CodeTag>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+							{/* "Hi!" text */}
+							<p className="ml-8 pb-2 font-black text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl">
+								{texts
+									.at(0)!
+									.split("")
+									.map((letter, index) => (
+										<RubberbandLetter
+											key={index}
+											letter={letter}
+										/>
+									))}
+							</p>
+
+							{/* Break words */}
+							<h1 className="flex flex-wrap gap-x-2 ml-8 font-black text-4xl min-[480px]:text-5xl sm:text-6xl md:text-7xl">
+								{texts
+									.at(1)!
+									.split(" ")
+									.map((text, textIndex) => (
+										<p
+											key={textIndex}
+											className="inline leading-[1.15]"
+										>
+											{text
+												.split("")
+												.map((letter, letterIndex) => (
+													<RubberbandLetter
+														key={letterIndex}
+														letter={letter}
+													/>
+												))}
+										</p>
+									))}
+							</h1>
+
+							<CodeTag className="ml-6">{"<h1>"}</CodeTag>
+						</div>
+						{/* h1 end */}
+
+						{/* p begin */}
+						<div>
+							<CodeTag className="ml-6">{"<p>"}</CodeTag>
+
+							<p className="py-2 ml-8">
+								🧑 Front-end & back-end developer,
+								<br />
+								based in Indonesia.
+							</p>
+
+							<CodeTag className="ml-6">{"</p>"}</CodeTag>
+						</div>
+						{/* p end */}
+
+						<Link
+							href="/about"
+							className={cn(
+								"inline-block ml-6 mt-4",
+								buttonVariants({
+									variant: "primary",
+									size: "md",
+								})
+							)}
+						>
+							About Me
+						</Link>
+					</div>
+				</div>
+
+				<div className="pb-14 lg:pb-0">
+					<CodeTag className="ml-3">{"</body>"}</CodeTag>
+					<br />
+					<CodeTag>{"</html>"}</CodeTag>
+				</div>
+			</div>
+		</main>
+	);
+};
+
+export default Page;

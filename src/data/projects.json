@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Amphibious - MikroTik Hotspot pages",
+		"imgSrc": "/images/projects/amphibious.webp",
+		"description": "Custom MikroTik hotspot page with clean design.",
+		"techStack": ["HTML", "TailwindCSS", "Javascript"],
+		"githubRepoUrl": "https://github.com/RanggaBS/amphibious",
+		"demoUrl": null
+	},
+	{
+		"title": "Bully - VS Code Extension",
+		"imgSrc": "/images/projects/vscode-bully-lua.webp",
+		"description": "A VS Code extension that provide auto completion & signatures help for Bully Natives functions & variables in Lua.",
+		"techStack": ["Typescript"],
+		"githubRepoUrl": "https://github.com/RanggaBS/vscode-bully-lua",
+		"demoUrl": null
+	},
+	{
+		"title": "Frontend Mentor Challenges",
+		"imgSrc": "/images/projects/project-frontendmentor.webp",
+		"description": "A collection of my solution of Frontend Mentor challenges. This is where I started my journey.",
+		"techStack": ["HTML", "CSS", "TailwindCSS", "Javascript", "React"],
+		"githubRepoUrl": "https://github.com/RanggaBS/vscode-bully-lua",
+		"demoUrl": null
+	}
+]
