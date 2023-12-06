@@ -103,7 +103,7 @@ const page = () => {
 									<br />
 									<br />
 									I&apos;m eager to work together and bring
-									innovation projects to life! 💻✨
+									innovative projects to life! 💻✨
 								</p>
 							</CodeBlock>
 						</div>
