@@ -51,15 +51,6 @@ const Page = () => {
 
 					{/* Description begin */}
 					<div className="max-w-lg mx-6">
-						{/* <CodeTag className="ml-6">{"<p>"}</CodeTag> */}
-
-						{/* <p className="max-w-lg ml-8">
-							Thank you for visiting my portfolio page! 🎉
-							<br />
-							If you have any questions, have a new interesting
-							project or collaboration, or if you just want to
-							talk, don&apos;t hesitate to contact me.
-						</p> */}
 						<CodeBlock tag="p" variant="top-left-bottom-right">
 							<p className="ml-2">
 								Thank you for visiting my portfolio page! 🎉
@@ -70,8 +61,6 @@ const Page = () => {
 								contact me.
 							</p>
 						</CodeBlock>
-
-						{/* <CodeTag className="ml-6">{"</p>"}</CodeTag> */}
 					</div>
 					{/* Description end */}
 

@@ -15,7 +15,8 @@ export const buttonVariants = cva(
 			variant: {
 				primary: `border-zinc-900 dark:border-zinc-100
 					bg-zinc-900 hover:bg-transparent dark:bg-zinc-100 dark:hover:bg-transparent  
-					text-zinc-100 hover:text-zinc-900 dark:text-zinc-900 dark:hover:text-zinc-100`,
+					text-zinc-100 hover:text-zinc-900 dark:text-zinc-900 dark:hover:text-zinc-100
+					disabled:opacity-75 disabled:bg-zinc-900 disabled:hover:bg-zinc-900 disabled:dark:bg-zinc-100 disabled:dark:hover:bg-zinc-100`,
 				secondary: `border-zinc-900 dark:border-zinc-100
 					bg-transparent hover:bg-zinc-900 dark:hover:bg-zinc-100
 					text-zinc-900 hover:text-zinc-100 dark:text-zinc-100 dark:hover:text-zinc-900`,

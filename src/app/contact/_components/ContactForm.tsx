@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { z } from "zod";
 
 import Button from "@/components/ui/Button";
@@ -16,18 +18,64 @@ import { Textarea } from "@/components/ui/textarea";
 import { contactFormSchema } from "@/schema/contact.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+export type ContactBody = {
+	name: string;
+	email: string;
+	message: string;
+};
+
 const ContactForm = () => {
 	const form = useForm<z.infer<typeof contactFormSchema>>({
 		resolver: zodResolver(contactFormSchema),
 	});
 
-	// TODO: Implement send email feature
-	const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
-		console.log("values = ", values);
+	const submitButtonRef = useRef<HTMLButtonElement | null>(null);
 
-		alert(
-			"Email not sent. Because this feature hasn't been implemented yet."
+	const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
+		if (submitButtonRef && submitButtonRef.current) {
+			submitButtonRef.current.disabled = true;
+		}
+
+		const sendDatas = async (): Promise<string> => {
+			const response = await fetch("/api/email", {
+				method: "POST",
+				body: JSON.stringify(values),
+			});
+
+			if (!response.ok) {
+				console.error(response.status, response.statusText);
+				return Promise.reject(response.statusText);
+			}
+
+			return Promise.resolve("OK");
+		};
+
+		const sendDatasTest = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (Math.random() <= 0.5) {
+					reject("REJECT");
+				} else {
+					resolve("RESOLVE");
+				}
+			}, 3000);
+		});
+
+		const sendingToast = toast.promise(
+			process.env.NODE_ENV !== "production" ? sendDatasTest : sendDatas(),
+			{
+				loading: "Sending email..",
+				success: "Success. Email was sent.",
+				error: "An error occured. Email not sent.",
+			}
 		);
+
+		try {
+			await sendingToast;
+		} finally {
+			if (submitButtonRef && submitButtonRef.current) {
+				submitButtonRef.current.disabled = false;
+			}
+		}
 	};
 
 	return (
@@ -87,14 +135,15 @@ const ContactForm = () => {
 				/>
 				{/* Message end */}
 
-				<Button type="submit" className="mt-2">
+				<Button type="submit" className="mt-2" ref={submitButtonRef}>
 					Submit
 				</Button>
-				<p className="text-xs">
+
+				{/* <p className="text-xs">
 					* This send email feature hasn&apos;t been implemented yet.
 					<br />
 					So don&apos;t worry if you accidentally submit the form.
-				</p>
+				</p> */}
 			</form>
 		</Form>
 	);
