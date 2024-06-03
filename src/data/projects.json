@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Amphibious - MikroTik Hotspot pages",
-		"imgSrc": "/images/projects/amphibious.webp",
+		"imgSrc": "https://github.com/RanggaBS/amphibious/raw/main/pictures/desktop-design.webp",
 		"description": "Custom MikroTik hotspot page with clean design.",
 		"techStack": ["HTML", "TailwindCSS", "Javascript"],
 		"githubRepoUrl": "https://github.com/RanggaBS/amphibious",
@@ -13,7 +13,7 @@
 		"description": "A VS Code extension that provide auto completion & signatures help for Bully Natives functions & variables in Lua.",
 		"techStack": ["Typescript"],
 		"githubRepoUrl": "https://github.com/RanggaBS/vscode-bully-lua",
-		"demoUrl": null
+		"demoUrl": "https://marketplace.visualstudio.com/items?itemName=ranggabs.bully-lua"
 	},
 	{
 		"title": "Frontend Mentor Challenges",

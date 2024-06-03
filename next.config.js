@@ -4,10 +4,10 @@ const nextConfig = {
 	productionBrowserSourceMaps: false,
 	images: {
 		remotePatterns: [
-			/* {
+			{
 				hostname: "github.com",
 				protocol: "https",
-			}, */
+			},
 			{
 				hostname: "raw.githubusercontent.com",
 				protocol: "https",
