@@ -57,6 +57,7 @@ const ProjectArticle = ({
 							<Link
 								href={githubRepoUrl}
 								className="flex items-center gap-x-2 hover:underline"
+								target="_blank"
 							>
 								GitHub <Icon icon={<LuExternalLink />} />
 							</Link>
@@ -66,6 +67,7 @@ const ProjectArticle = ({
 							<Link
 								href={demoUrl}
 								className="flex items-center gap-x-2 hover:underline"
+								target="_blank"
 							>
 								Demo <Icon icon={<LuExternalLink />} />
 							</Link>
